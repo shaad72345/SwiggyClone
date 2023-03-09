@@ -1,0 +1,184 @@
+#likeDiv{
+    display: flex;
+    width:60%;
+    justify-content: space-between;
+    text-align: center;
+    margin: auto;
+    /* border: solid black .5px; */
+    overflow: hidden;
+   background-color:white;
+}
+
+
+#heart{
+    margin: 0 20px;
+}
+
+  .fa-heart-o {
+    color: red;
+    cursor: pointer;
+    margin: 0 20px;
+  }
+ #rating{
+  margin: 20px 0px;
+  border-radius: 10px;
+  background-color: white;
+ }
+#ratingDiv{
+  display: flex;
+  width:60%;
+  justify-content: space-between;
+  text-align: center;
+  margin: auto;
+   /* border: solid black .5px; */
+}
+#detailsDiv{
+  text-align: left;
+}
+#deliverycharge{
+  
+  width:60%;
+  justify-content: space-between;
+
+  margin: auto;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.color{
+  color:#fa8427 ;
+}
+#offers{
+  display: flex;
+  width:60%;
+  /* text-align: center; */
+  margin: auto;
+  overflow: auto;
+  white-space: nowrap;
+  
+}
+.offer-btn{
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+}
+#offers::-webkit-scrollbar {
+  display: none;
+}
+
+#vegfilter{
+  display: flex;
+  width:60%;
+  /* justify-content: space-between;
+  text-align: center; */
+  margin: auto;
+  /* border: solid black .5px; */
+}
+/* Veg slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-left: 20px;
+  border-radius: 15px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #1e8249;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.vegIcon{
+  width: 20px;
+  height: 20px;
+}
+
+.ItemContainer{
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  margin: 20px auto;
+  padding-bottom: 20px;
+  border-bottom: #a9a4a4 solid 1px; 
+  position: relative;
+}
+.item-detailDiv{
+  line-height: 10px;
+}
+.itemImg{
+  width: 130px;
+  height: 130px;
+  border-radius: 10px;
+}
+.Foodpara{
+  width: 60ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+padding: 10px 0px;
+ }
+
+
+.xyz{
+  padding: 8px 30px;
+  font-size: large;
+  background-color: white;
+  color: #18c061;
+  border-color: #dce9cd;
+  cursor: pointer;
+  border-radius: 5px;
+  position: absolute;
+  right: 18px;
+  top: 100px;
+}
+.sticky {
+  position: fixed;
+   overflow: hidden;
+ padding: 15px;
+ top: 0;
+left: 265px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+
