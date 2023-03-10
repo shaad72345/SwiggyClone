@@ -172,7 +172,7 @@ currentLocBtn.onclick=()=>{
     function getCoordintes(){
         const options = {
           enableHighAccuracy: true,
-          timeout: 700,
+          timeout: 1000,
           maximumAge: 0,
         };
         function success(pos) {
@@ -302,6 +302,8 @@ currentLocBtn.onclick=()=>{
       return (word.charAt(0).toUpperCase() + word.slice(1));
     }).join(' ');
   }
+
+//   hii
 
 
 

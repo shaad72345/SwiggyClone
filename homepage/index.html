@@ -10,11 +10,213 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../componentt/navbar1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../loginpage/login1.css">
 </head>
 <body>
-    <nav id="nbar">
-               
-    </nav>
+    <header class="text-gray-600 body-font" id="nav-body">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="../homepage/index.html">
+              <img src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" alt="" id="logo" >
+      
+            <span class="ml-3 text-xl" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                <div id="nav-location">
+                      <span id="other">
+                          <span class="other">Other</span>
+                      </span>
+                      <span id="town">
+                          Berhampur,Ganjam,Odisha
+                      </span>
+                      <span >
+                          <i id="nav-down" class="fa-solid fa-chevron-down"></i>
+                      </span>
+                  </div>
+            </span>
+            
+      <!-- offcanvas for location -->
+            <div class="offcanvas offcanvas-start location-canvas" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div class="offcanvas-header">
+                <!-- <i class="fa-solid fa-xmark"></i> -->
+                <button class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
+              </div>
+              <div class="offcanvas-body">
+                <div class="location-input">
+                  <div class="location-input2">
+                    <input type="text" id="location-input" placeholder="Search for City">
+                  </div>
+                </div>     
+                <div class="location-input">
+                  <div class="location-input3">
+                        <div class="gps" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                          <div class="icon-location-crosshair _13AY4"></div>
+                          <div class="_3eFzL" >
+                            <div class="Ku2oK" >Get current location</div>
+                            <div class="_1joFh">Using GPS</div>
+                          </div>
+                        </div>
+                  </div>
+                </div>    
+                <div class="recent-search">
+                  <div class="recent-search-text">RECENT SEARCH</div>
+      
+                  <!-- recen search city of your system -->
+                  <div id="recent-search-container">
+                   
+                  
+                  </div>
+                         
+                  
+                </div>
+      
+              </div>
+            </div>
+      
+      
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 ">
+               <i class="fa-solid fa-magnifying-glass"></i>
+                <span id="search-text" style="margin-left: 7px;">Search</span>
+            </a>
+            <a class="mr-5 ">
+              <i class="fa-solid fa-percent"></i>
+              <span id="discount-text" style="margin-left: 7px;" >Discount</span>
+              <sup class="discount-text" style="color: darkorange;">NEW</sup>
+            </a>
+            <a class="mr-5 ">
+              <i class="fa-solid fa-circle-info"></i>
+              <span id="help-text" style="margin-left: 7px;" >Help</span>
+            </a>
+            <div class="UserName dropdown">
+            <a class="mr-5 dropbtn">
+              <i class="fa-solid fa-user-plus"></i>
+               <span id="Profile" style="margin-left: 7px;">UserName</span>
+           </a>
+           <div class="dropdown-content">
+            <a href="../profilePage/profileEdit.html">Profile</a>
+            <a href="#">Order</a>
+            <a href="#">Swiggy One</a>
+            <a href="#">Favourites</a>
+            <a href="#" id="logout">Logout</a>
+          </div> 
+          </div>
+      
+               <div>
+            <a class="mr-5 signin-nav" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+              <i class="fa-solid fa-user-plus"></i>
+              <span id="signin-text" style="margin-left: 7px;" >Sign in</span>
+              </a>
+           
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h3 class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></h3>
+        </div>
+        <!-- Offcavbas -->
+        <div class="offcanvas-body" id="offcanvas-body">
+      
+          <!-- canvas form for login form -->
+            <div class="login-div">
+      
+              <div id="login-text">
+                Login
+              </div>
+              <div class="blank"></div>
+              <div class="create">
+                or <span id="create">create an account</span>
+              </div>
+              <img class="_2tuBw _12_oN jdo4W" width="100" height="105" style="margin-right: 30px;" alt="" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r">
+            </div>
+            <form action="" id="login-form">
+              <div>
+                <div id="phone-box">
+                  <input class="_381fS" type="tel"  id="mobile" tabindex="1" maxlength="10" autocomplete="off" value="">
+                  <div></div>
+                  <label class="_1Cvlf _2tL9P " for="mobile">Phone number</label>
+                </div>
+              </div>
+              <div class="login-button">
+                <a class="a-ayg"><input type="submit" value="LOGIN" id="log" ></a>
+              </div>
+              <div class="additional">
+                By clicking on Login, I accept the 
+                <a class="Terms" href="#" >Terms &amp; Conditions</a>
+                &
+                <a class="Policy" href="/privacy-policy">Privacy Policy</a>
+              </div>
+            </form>
+      
+          <!-- canvas form for signup form -->
+      
+            <div class="signup-div">
+      
+              <div id="signup-text">
+                Sign up
+              </div>
+              <div class="blank"></div>
+              <div class="already">
+                or <span id="already">login to your account</span>
+              </div>
+              <img class="_2tuBw _12_oN jdo4W" width="100" height="105" style="margin-right: 30px;" alt="" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r">
+            </div>
+            <form action="" id="signup-form">
+              <div>
+                <div id="phone-box">
+                  <input class="_381fS mobile" type="number"  id="mobile" tabindex="1" maxlength="10" autocomplete="off">
+                  <div></div>
+                  <label class="_1Cvlf _2tL9P " for="mobile">Phone number</label>
+                </div>
+              </div>
+              <div>
+                <div id="name-box">
+                  <input class="_381fS" type="text"  id="name" tabindex="1"  autocomplete="off" value="">
+                  <div></div>
+                  <label class="_1Cvlf _2tL9P " for="name">Name</label>
+                </div>
+              </div>
+              <div>
+                <div id="email-box">
+                  <input class="_381fS" type="email"  id="email" tabindex="1"  autocomplete="off" value="">
+                  <div></div>
+                  <label class="_1Cvlf _2tL9P " for="email">Email</label>
+                </div>
+              </div>
+              <div class="signup-button">
+                <a class="a-ayg"><input type="submit"  value="CONTINUE" id="sign"></a>
+              </div>
+              <div class="additional">
+                By creating an account, I accept the 
+                <a class="Terms" href="#" >Terms &amp; Conditions</a>
+                &
+                <a class="Policy" href="#">Privacy Policy</a>
+              </div>
+            </form>
+      
+          </div>
+      </div>
+              </div>
+            <a class="mr-5 " href="../cartpage/cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cart-text" style="margin-left: 7px;" >Cart</span>
+            </a>
+          </nav>
+        </div>
+      
+        <!-- toast alert -->
+        <div class="toast-container position-fixed top-10 end-10 p-3" >
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">Ok</button>
+            </div>
+            <div class="toast-body">
+              Hello, world! This is a example of toast message.
+            </div>
+          </div>
+        </div>
+      </header>
     <div id="offers">
         <div class="carousel">
             <div class="carousel-container">
@@ -22,7 +224,7 @@
               <div class="carousel-item"><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/lzkjv3sxwwjkzg0vxpvt" alt=""></div>
               <div class="carousel-item"><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/tgnvusbs3fnzz7xupeno" alt=""></div>
               <div class="carousel-item"><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/nhubtkw7dukg3ukcmpam" alt=""></div>
-              <div class="carousel-item"><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/oxe97jexxbnxqtbhg2zo" alt=""></div>
+              <div class="carousel-item"><img src="https://i.ibb.co/v1YtQqR/yogesh2.png" alt=""></div>
               <div class="carousel-item"><img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/ifi2lbzxeu1hvsqrsip3" alt=""></div>
             </div>
             <button class="carousel-button carousel-button-left"><i class="fa-solid fa-arrow-left"></i></button>
@@ -31,19 +233,164 @@
     </div>
     <div id="main">
         <div id="restobar">
-            <div>393 restaurants</div>
+            <div><span id="rcount"></span> restaurants</div>
             <div>
-                <p>Relevance</p>
-                <p>Delivery Time</p>
-                <p>Rating</p>
-                <p>Cost: Low To High</p>
-                <p>Cost: High To Low</p>
-                <p>Filters</p>
-                <i class="fa-solid fa-sliders"></i>
+                <p class="tab selected">Relevance</p>
+                <p class="tab">Delivery Time</p>
+                <p class="tab">Rating</p>
+                <p class="tab">Cost: Low To High</p>
+                <p class="tab">Cost: High To Low</p>
+                <p id="open-panel">Filters</p>
+                <i id="open-icon" class="fa-solid fa-sliders"></i>
             </div>
         </div>
         <div id="restos">
             
+        </div>
+    </div>
+    <div class="cart-panel" id="ccpanel">
+        <div id="carttop">
+            <button id="close-panel">
+                <svg focusable="false" width="14" height="14"   class="icon icon--close" viewBox="0 0 14 14">
+                    <path d="M13 13L1 1M13 1L1 13" stroke="currentColor" stroke-width="2" fill="none"></path>
+                </svg>
+            </button>
+            <p>Filters</p>
+        </div>
+        <div class="cart-content" id="cc">
+            <div>
+                <p>Cuisines</p>
+                <div class="fters">
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Afghani">
+                        <label for="finput">Afgani</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Asian">
+                        <label for="finput">Asian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="American">
+                        <label for="finput">American</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Bengali">
+                        <label for="finput">Bengali</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Beverages">
+                        <label for="finput">Bevarages</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Chinese">
+                        <label for="finput">Chinese</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Cafe">
+                        <label for="finput">Cafe</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Burgers">
+                        <label for="finput">Burgers</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Chaat">
+                        <label for="finput">Chaat</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Combo">
+                        <label for="finput">Combo</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Desserts">
+                        <label for="finput">Desserts</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Fast">
+                        <label for="finput">Fast</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Fast Food">
+                        <label for="finput">Fast Food</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Grill">
+                        <label for="finput">Grill</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Andhra">
+                        <label for="finput">Andhra</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Pizzas">
+                        <label for="finput">Pizzas</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Indian">
+                        <label for="finput">Indian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="South Indian">
+                        <label for="finput">South Indian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="North Indian">
+                        <label for="finput">North Indian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Thalis">
+                        <label for="finput">Thalis</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Kerala">
+                        <label for="finput">Kerala</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Mughlai">
+                        <label for="finput">Mughlai</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Italian">
+                        <label for="finput">Italian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Bakery">
+                        <label for="finput">Bakery</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Snacks">
+                        <label for="finput">Snacks</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Continental">
+                        <label for="finput">Continental</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Pastas">
+                        <label for="finput">Pastas</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Kebabs">
+                        <label for="finput">Kebabs</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Punjabi">
+                        <label for="finput">Punjabi</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Street Food">
+                        <label for="finput">Street Food</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Turkish">
+                        <label for="finput">Turkish</label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="cctotal">
+            <button id="clearbtn">CLEAR</button>
+            <button id="showbtn">SHOW RESTAURANTS</button>
         </div>
     </div>
     <footer>
@@ -135,6 +482,7 @@
 </body>
 </html>
 
-
-<script src="index.js" type="module"></script>
+<script src="../loginpage/login1.js" type=""></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="index.js" type=""></script>
 <script src="https://kit.fontawesome.com/4d1e521af4.js" crossorigin="anonymous"></script>

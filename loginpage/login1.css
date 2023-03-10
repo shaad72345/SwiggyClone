@@ -1,5 +1,8 @@
 
 /* offcanvas css for login and signup */
+*{
+    font-family: "montserrat";
+}
 #offcanvasRight{
     width: 555px;
  
@@ -16,7 +19,7 @@
 #login-text,#signup-text{
     margin-top: 25px;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 800;
 }
 .blank{
     width: 190px;
@@ -27,7 +30,7 @@
     position: relative;
 }
 #create,#already{
-    font-weight: 500;
+    font-weight: 800;
     cursor: pointer;
     color: #fc8019;
 }
@@ -67,11 +70,12 @@
     padding: 0 20px;
     padding-top: 22px;
     box-sizing: border-box;
-    font-weight: 500;
+    font-weight: 800;
 }
 #phone-box>label,#name-box>label,#email-box>label{
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 800;
+    
     color: #7e808c;
     transform: translateY(-70%);
     position: absolute;
@@ -84,7 +88,7 @@
     width: 100%;
     color: #93959f;
     will-change: transform,color,font-size;
-    font-weight: 400;
+    font-weight: 650;
 }
 .login-button,.signup-button{
     position: relative;
@@ -94,7 +98,7 @@
 #log,#sign{
     width: 100%;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 850;
     line-height: 50px;
 }
 .a-ayg {
@@ -105,7 +109,7 @@
     text-align: center;
     line-height: 50px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 850;
     height: 50px;
     letter-spacing: 0;
     color: #fff;
@@ -117,7 +121,7 @@
     font-size: 17px;
     color: #686b78;
     margin-top: 6px;
-    font-weight: 500;
+    font-weight: 850;
 }
 .Terms,.Policy{
     color: #282c3f;
@@ -137,10 +141,11 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding-top: 15px;
-    z-index: 1;
+    z-index: 4;
     border-top: 1px solid darkorange;
     font-size: 14px;
     border-radius: 10px;
+    
   }
   
   .dropdown-content a {
@@ -195,7 +200,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: 500;
+    font-weight: 850;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   .gps{
@@ -221,7 +226,7 @@
 }
 .Ku2oK {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 850;
     color: #282c3f;
 }
 ._1joFh {
@@ -261,7 +266,7 @@
 
 #search-city-name{
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 850;
     color: #282c3f;
 }
 #search-city-state{

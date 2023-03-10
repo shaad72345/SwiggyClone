@@ -1,3 +1,7 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+ 
+}
 #likeDiv{
     display: flex;
     width:60%;
@@ -7,6 +11,7 @@
     /* border: solid black .5px; */
     overflow: hidden;
    background-color:white;
+   z-index: 100;
 }
 
 
@@ -22,6 +27,9 @@
  #rating{
   margin: 20px 0px;
   border-radius: 10px;
+  border-color: #d9d0d0;
+  padding: 4px 13px;
+  color: #1b5c37;
   background-color: white;
  }
 #ratingDiv{
@@ -46,6 +54,15 @@
 }
 .color{
   color:#fa8427 ;
+}
+.colorG{
+  color:green;
+}
+.colorR{
+  color: rgb(146, 16, 16);
+}
+.colorY{
+  color: rgb(154, 154, 7);
 }
 #offers{
   display: flex;
@@ -132,15 +149,20 @@ input:checked + .slider:before {
   width: 20px;
   height: 20px;
 }
-
+/* #mainItemContainer{
+ 
+} */
 .ItemContainer{
   display: flex;
   width: 60%;
   justify-content: space-between;
+ 
   margin: 20px auto;
   padding-bottom: 20px;
+  overflow: hidden;
   border-bottom: #a9a4a4 solid 1px; 
   position: relative;
+  
 }
 .item-detailDiv{
   line-height: 10px;
@@ -160,17 +182,47 @@ padding: 10px 0px;
 
 
 .xyz{
-  padding: 8px 30px;
+  padding: 8px 29px;
   font-size: large;
   background-color: white;
   color: #18c061;
   border-color: #dce9cd;
   cursor: pointer;
   border-radius: 5px;
-  position: absolute;
   right: 18px;
-  top: 100px;
+  bottom: 18px;
+  cursor: pointer;
+  position: absolute;
 }
+.countmainDiv{
+  display: flex;
+  border: solid #1e8249;
+  overflow: hidden;
+  height: 35px;
+  width: 90px;
+  justify-content: space-between;
+  align-items:center;
+  background-color: white;
+  border-radius: 6px;
+  bottom: 18px;
+  right: 20px;
+  cursor: pointer;
+  position: absolute;
+
+}
+.negDiv{
+/* border: solid black; */
+padding: 10px;
+color: #1e8249;
+}
+.posDiv{
+  /* border: solid black; */
+  color: #1e8249;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+
 .sticky {
   position: fixed;
    overflow: hidden;
@@ -179,6 +231,54 @@ padding: 10px 0px;
 left: 265px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+div.fixed {
+  position: fixed;
+  padding: 10px 20px;
+  width: 60%;
+  height: 50px;
+  bottom: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #1e8249;
+  z-index: 100;
+left: 18%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+} 
+
+@media (max-width: 1035px) {
+  .ItemContainer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .item-detailDiv + div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .item-detailDiv .Foodpara {
+    text-overflow: unset;
+    overflow: auto;
+    line-height: 1.5;
+    white-space: inherit;
+  }
+
+  .xyz {
+    position: static;
+
+  }
+}
+
+
+
+
 
 
 

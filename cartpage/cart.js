@@ -1,12 +1,13 @@
-import { footer, navbar } from "./utility.js";
 
+=======
 document.getElementById("navbar").innerHTML = navbar;
 document.getElementById("footer").innerHTML = footer;
 
 var cartitem = JSON.parse(localStorage.getItem("user_log_session")) || [];
-console.log(cartitem.user_cart);
+// console.log(cartitem.user_cart);
 var addressArr = JSON.parse(localStorage.getItem("address")) || [];
 var id = 1;
+let SelectedREs=JSON.parse(localStorage.getItem("selected-resto"))
 
 if (addressArr.length != 0) {
   document.getElementById("address").innerHTML = "";
@@ -38,10 +39,14 @@ const map = () => {
   
     displayAddress(addressArr);
   };
+
+
+
+  
   function displayAddress(data) {
     document.getElementById("addnew").innerHTML = "";
     document.getElementById("confirmAdd").innerHTML = "";
-    data.map(function (el) {
+    data.map(function (el,id) {
       var div1 = document.createElement("div");
       div1.setAttribute("class", "newone");
       var div2 = document.createElement("div");
@@ -63,7 +68,7 @@ const map = () => {
       btn.innerText = "DELIVER HERE";
       btn.addEventListener("click", function () {
         displayPayment();
-        displayConfirmAddress(el.id);
+        displayConfirmAddress(el,id);
       });
       var div9 = document.createElement("div");
       div9.append(div4, div8, div7, btn);
@@ -79,16 +84,13 @@ const map = () => {
     });
   }
   
-  function displayConfirmAddress(index) {
-    let obj = addressArr.filter(function (el) {
-      return el.id == index;
-    });
-    console.log(obj);
+  function displayConfirmAddress(el,id) {
+  
+    console.log(el,id);
   
     document.getElementById("addnew").innerHTML = "";
     document.getElementById("confirmAdd").innerHTML = "";
     document.getElementById("address").innerHTML = "";
-    console.log(obj[0].home);
     var div1 = document.createElement("div");
     div1.setAttribute("class", "cnfrm");
     var div2 = document.createElement("div");
@@ -104,16 +106,48 @@ const map = () => {
     let div = `
                       
                       <div>
-                          <div>${obj[0].home}</div>
+                          <div>${el.home}</div>
                           <div>
-                              <p>${obj[0].flat}</p>
-                              <p>${obj[0].landmark}</p>
+                              <p>${el.flat}</p>
+                              <p>${el.landmark}</p>
                           </div>
-                          <div>${obj[0].time}</div>
+                          <div>${el.time}</div>
                       </div>
       `;
+      console.log(div)
     document.getElementById("confirmAdd").innerHTML += div;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   
   document.getElementById("bottom").addEventListener("click", getAddress);
   var homevalue;
@@ -204,6 +238,25 @@ const map = () => {
   function displayright() {
     var totalamt = 0;
     const data = cartitem.user_cart;
+    // data.map(function (el) {
+    //   totalamt += el.price;
+    //   let div = `
+    //   <div class="row mb-4 d-flex justify-content-between align-items-center dish">
+    //                       <div class="col-md-2 col-lg-2 col-xl-2">
+    //                         <img height="20px" width="20px"
+    //                           src="./img/800px-Indian-vegetarian-mark.svg.png"
+    //                           class="img-fluid rounded-3" alt="Cotton T-shirt">
+    //                       </div>
+    //                       <div class="col-md-3 col-lg-3 col-xl-3">
+    //                         <h6 class="text-muted">${el.item_name}</h6>
+    //                       </div>
+    //                       <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+    //                         <button class="btn btn-link px-2"
+    //                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+    //                           <i class="fas fa-minus"></i>
+    //                         </button>
+=======
+    const data = cartitem.user_cart || [];
     data.map(function (el) {
       totalamt += el.price;
       let div = `
@@ -222,41 +275,40 @@ const map = () => {
                               <i class="fas fa-minus"></i>
                             </button>
       
-                            <input id="${el.id}" min="0" name="quantity" value="1" type="number"
-                              class="form-control form-control-sm" />
+    //                         <input id="${el.id}" min="0" name="quantity" value="1" type="number"
+    //                           class="form-control form-control-sm" />
       
-                            <button class="btn btn-link px-2"
-                              onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                              <i class="fas fa-plus"></i>
-                            </button>
-                          </div>
-                          <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                            <h6 class="mb-0">₹${el.price} </h6>
-                          </div>
-                          <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                            <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
-                          </div>
-                        </div>
+    //                         <button class="btn btn-link px-2"
+    //                           onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+    //                           <i class="fas fa-plus"></i>
+    //                         </button>
+    //                       </div>
+    //                       <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+    //                         <h6 class="mb-0">₹${el.price} </h6>
+    //                       </div>
+    //                       <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+    //                         <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+    //                       </div>
+    //                     </div>
       
-                        <hr class="my-4">
-      `;
-      document.getElementById("items").innerHTML += div;
-    });
+    //                     <hr class="my-4">
+    //   `;
+    //   document.getElementById("items").innerHTML += div;
+    // });
     var div1 = `
    <div>
-                          <div>TO PAY</div>
-                          <div>${totalamt}</div>
+                  
+        
                       </div>
    `;
     document.getElementById("toPay").innerHTML = div1;
   }
   displayright();
-  document
-    .getElementById("cart_items_button2")
-    .addEventListener("click", gotoDashBoard);
-  document
-    .getElementById("cart_items_button")
-    .addEventListener("click", gotoDashBoard);
+  // document .getElementById("cart_items_button2").addEventListener("click", gotoDashBoard);
+  // document.getElementById("cart_items_button").addEventListener("click", gotoDashBoard);
+=======
+//   document.getElementById("cart_items_button2").addEventListener("click", gotoDashBoard);
+//   document.getElementById("cart_items_button").addEventListener("click", gotoDashBoard);
   function gotoDashBoard(e) {
     e.preventDefault();
     alert("Order Placed Successfully!");
