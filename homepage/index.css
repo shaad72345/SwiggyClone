@@ -41,6 +41,7 @@ body {
     gap:10px;
     align-items: center;
     overflow: scroll;
+    margin-left: 10px;
 }
 #restobar > div:nth-of-type(2)::-webkit-scrollbar {
     display: none;
@@ -60,7 +61,7 @@ body {
     cursor: pointer;
     position: relative;
 }
-#restobar > div:nth-of-type(2) > p:first-of-type{
+.selected{
     border-bottom: 2px solid black;
 }
 #restobar > div:nth-of-type(2) > p:last-of-type{
@@ -73,17 +74,152 @@ body {
     color:#fc8019;
 }
 
+/* Filter Slide Div */
+.cart-panel {
+    position: fixed;
+    height: 100vh;
+    width:565px;
+    right: -580px;
+    top:0;
+    backdrop-filter: blur(5px);
+    background: white;
+    -webkit-transition: all 0.5s ease-in-out;
+}
+
+.open {
+    right: 0  !important;
+}
+.hide {
+    visibility: hidden  !important;
+}
+
+
+.cart-header > h4 {
+    font-weight: normal;
+}
+.cart-header > button {
+    border:none;
+    outline:none;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    background: linear-gradient(#C7D3DC, #5B798E);
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 99px;
+    -webkit-transition: all 0.3s linear;
+    background-size: 1px 200px;
+}
+.cart-header > button:hover {
+    background-position: 100px;
+}
+.cart-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
+    overflow: auto;
+    overflow-x:hidden;
+    padding-left: 40px;
+}
+#carttop {
+    display: flex;
+    padding: 30px;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+#carttop p{
+    margin: 12px;
+}
+#carttop button{
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+    padding-top: 5px;
+}
+.fters{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#cc > div > p{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+#cctotal {
+    gap:20px;
+    box-shadow: 0 -6px 7px #dfdfdfb8;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+}
+.fters span,label{
+    cursor: pointer;
+    margin: 5px 0px;
+}
+.fters span:hover{
+    font-weight: 600;
+}
+.fters input{
+    cursor: pointer;
+    border: 1px solid #a9abb2;
+    background-color: transparent;
+    transition: border .3s;
+    border-radius: 0;
+    accent-color: #e74c3c;
+}
+
+#cctotal > button:first-of-type{
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+    padding: 0 2rem;
+    color: #535665;
+    letter-spacing: 0;
+    border: 1px solid #535665;
+    -ms-flex: 0;
+    flex: 0;
+    opacity: .5; 
+}
+#cctotal > button:last-of-type{
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+    padding: 0 2rem;
+    color: #fc8019;
+    letter-spacing: 0;
+    color: #fff;
+    background-color: #fc8019;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
+    -ms-flex: 1;
+    flex: 1;
+    margin-right: 75px;
+}
+
+
 /* Restos */
 
 #restos{
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 415px;
     gap:15px;
 }
 
 .card{
     padding: 20px;
-    margin-bottom: 85px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
@@ -133,7 +269,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     color: #8a584b;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 .coffer > i{
     color: #8a584b;
@@ -245,6 +381,7 @@ body {
 /* footer */
 footer{
     background-color: #000;
+    margin-top: 50px;
 }
 
 #footer{
@@ -312,4 +449,29 @@ ul {
     font-size: 20px;
     letter-spacing: -.6px;
     color: white;
+}
+
+@media screen and (max-width:1150px) {
+    #restos{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (max-width:945px) {
+    #restos{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #f1{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:625px) {
+    #restos{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .cart-panel {
+        width:350px;
+        right: -580px;
+    }
 }

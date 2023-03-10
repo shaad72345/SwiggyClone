@@ -33,17 +33,162 @@
         <div id="restobar">
             <div>393 restaurants</div>
             <div>
-                <p>Relevance</p>
-                <p>Delivery Time</p>
-                <p>Rating</p>
-                <p>Cost: Low To High</p>
-                <p>Cost: High To Low</p>
-                <p>Filters</p>
-                <i class="fa-solid fa-sliders"></i>
+                <p class="tab selected">Relevance</p>
+                <p class="tab">Delivery Time</p>
+                <p class="tab">Rating</p>
+                <p class="tab">Cost: Low To High</p>
+                <p class="tab">Cost: High To Low</p>
+                <p id="open-panel">Filters</p>
+                <i id="open-icon" class="fa-solid fa-sliders"></i>
             </div>
         </div>
         <div id="restos">
             
+        </div>
+    </div>
+    <div class="cart-panel" id="ccpanel">
+        <div id="carttop">
+            <button id="close-panel">
+                <svg focusable="false" width="14" height="14"   class="icon icon--close" viewBox="0 0 14 14">
+                    <path d="M13 13L1 1M13 1L1 13" stroke="currentColor" stroke-width="2" fill="none"></path>
+                </svg>
+            </button>
+            <p>Filters</p>
+        </div>
+        <div class="cart-content" id="cc">
+            <div>
+                <p>Cuisines</p>
+                <div class="fters">
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Afghani">
+                        <label for="finput">Afgani</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Asian">
+                        <label for="finput">Asian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="American">
+                        <label for="finput">American</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Bengali">
+                        <label for="finput">Bengali</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Beverages">
+                        <label for="finput">Bevarages</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Chinese">
+                        <label for="finput">Chinese</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Cafe">
+                        <label for="finput">Cafe</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Burgers">
+                        <label for="finput">Burgers</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Chaat">
+                        <label for="finput">Chaat</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Combo">
+                        <label for="finput">Combo</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Desserts">
+                        <label for="finput">Desserts</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Fast">
+                        <label for="finput">Fast</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Fast Food">
+                        <label for="finput">Fast Food</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Grill">
+                        <label for="finput">Grill</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Andhra">
+                        <label for="finput">Andhra</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Pizzas">
+                        <label for="finput">Pizzas</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Indian">
+                        <label for="finput">Indian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="South Indian">
+                        <label for="finput">South Indian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="North Indian">
+                        <label for="finput">North Indian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Thalis">
+                        <label for="finput">Thalis</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Kerala">
+                        <label for="finput">Kerala</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Mughlai">
+                        <label for="finput">Mughlai</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Italian">
+                        <label for="finput">Italian</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Bakery">
+                        <label for="finput">Bakery</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Snacks">
+                        <label for="finput">Snacks</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Continental">
+                        <label for="finput">Continental</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Pastas">
+                        <label for="finput">Pastas</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Kebabs">
+                        <label for="finput">Kebabs</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Punjabi">
+                        <label for="finput">Punjabi</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Street Food">
+                        <label for="finput">Street Food</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="CUISINES" class="finput" value="Turkish">
+                        <label for="finput">Turkish</label>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="cctotal">
+            <button id="clearbtn">CLEAR</button>
+            <button id="showbtn">SHOW RESTAURANTS</button>
         </div>
     </div>
     <footer>
