@@ -13,14 +13,19 @@
     <div class="container">
         <div class="newFlex">
     <div class="input-group rounded classFlex">
-        <input type="search" onkeyup="searchBtn()" class="form-control rounded" id="searchText" placeholder="Search for restaurants" aria-label="Search" aria-describedby="search-addon" />
-        <span class="input-group-text border-0" id="search-addon" onclick="searchBtn()">
-          <i class="fas fa-search"></i>
+        <input type="text" onkeyup="searchBtn()" class="form-control rounded" id="searchText" placeholder="Search for restaurants" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search" id="showSearch"></i>
+          <i class="fas fa-close" id="showClose"></i>
         </span>
       </div>
         </div>
       <div id="showRestaurants">
 
+      </div>
+      <div id="popular">
+<p id="pop">Popular Restaurants</p>
+<div id="displayRestaurants"></div>
       </div>
     </div>
 </body>
