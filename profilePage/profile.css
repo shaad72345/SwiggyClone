@@ -1,33 +1,42 @@
-.body-font{
+.body-font {
     background-color: #37718e;
 }
-#profile-name,#profile-emial{
+
+#profile-name,
+#profile-emial {
     color: white;
 }
-#edit{
+
+#edit {
     background-color: none;
     border-color: 2px solid white;
 }
-#edit:hover{
+
+#edit:hover {
     color: #37718e;
     /* background-color: white; */
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-#login-form-edit{
+
+#login-form-edit {
     display: block;
 
 }
-#phone-box-edit,#email-box-edit{
+
+#phone-box-edit,
+#email-box-edit {
     border: 1px solid #d4d5d9;
     padding: 0;
     display: block;
     position: relative;
 }
-.update-button{
+
+.update-button {
     position: relative;
     clear: both;
     margin-top: 20px;
 }
+
 .a-ayg {
     width: 100%;
     text-decoration: none;
@@ -44,13 +53,16 @@
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 12%);
     text-transform: uppercase;
 }
-#update{
+
+#update {
     width: 100%;
     font-size: 15px;
     font-weight: 900;
     line-height: 50px;
 }
-#phone-box-edit>label,#email-box-edit>label{
+
+#phone-box-edit>label,
+#email-box-edit>label {
     font-size: 12px;
     font-weight: 800;
     color: #7e808c;
@@ -64,10 +76,12 @@
     transition: .2s ease;
     width: 100%;
     color: #93959f;
-    will-change: transform,color,font-size;
+    will-change: transform, color, font-size;
     font-weight: 700;
 }
-#mobile-edit,#email-edit{
+
+#mobile-edit,
+#email-edit {
     outline: none;
     height: 70px;
     width: 90%;
@@ -77,10 +91,12 @@
     box-sizing: border-box;
     font-weight: 800;
 }
-#edit-profile{
+
+#edit-profile {
     font-weight: 800;
     margin-bottom: 20px;
 }
+
 /* .body-font{
     position: fixed;
     width: 100%;
@@ -89,9 +105,9 @@
 
 * {
     font-family: "montserrat"
-    /* margin: 0; */
-    /* padding: 0; */
-    /* color: #282c3f; */
+        /* margin: 0; */
+        /* padding: 0; */
+        /* color: #282c3f; */
 }
 
 
@@ -294,7 +310,8 @@ img {
     margin-top: -5px;
     margin-right: 10px;
 }
-#swiggy_one{
+
+#swiggy_one {
     display: flex;
     gap: 35px;
     margin: 0 10px;
@@ -303,43 +320,50 @@ img {
     justify-content: space-between;
     display: none;
 }
-.swiggy_one_two>img{
+
+.swiggy_one_two>img {
     width: 70%;
     border-radius: 50px;
 }
 
-.swiggy_one_one{
+.swiggy_one_one {
     display: grid;
     gap: 25px;
     width: 80%;
 }
-.swiggy_one_text{
+
+.swiggy_one_text {
     font-size: 25px;
     font-weight: 800;
 }
-.app_download{
+
+.app_download {
     display: flex;
     gap: 10px;
     display: none;
 }
-.payment-method{
+
+.payment-method {
     font-size: 25px;
     font-weight: 800;
     display: none;
 }
-.setting-text{
+
+.setting-text {
     font-size: 25px;
     font-weight: 800;
     margin-bottom: 30px;
 }
-.setting-text-one{
+
+.setting-text-one {
     font-size: 12px;
     border: 1px solid gray;
     padding: 8px;
     margin-right: 30px;
     margin-bottom: 30px;
 }
-.setting-text-two{
+
+.setting-text-two {
     font-size: 12px;
     border: 1px solid gray;
     padding: 15px;
@@ -349,79 +373,87 @@ img {
     gap: 30px;
     justify-content: space-evenly;
 }
-#setting-text-two{
+
+#setting-text-two {
     font-size: 15px;
     font-weight: 700;
 }
-.profile-address{
+
+.profile-address {
     display: grid;
-    justify-content:  center;
-    align-items:  center;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     text-align: center;
     margin: auto;
     display: none;
 }
-.profile-address>h1{
+
+.profile-address>h1 {
     font-size: 20px;
     font-weight: 700;
 }
-.profile-address>p{
+
+.profile-address>p {
     font-size: 13px;
 }
-.profile-setting{
+
+.profile-setting {
     display: none;
 }
 
-.favRes-container{
+.favRes-container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     /* border: 2px solid green; */
     width: 90%;
     margin: auto;
-    gap:15px;
+    gap: 15px;
     display: none;
 }
-.favRes-container>h1{
+
+.favRes-container>h1 {
     font-size: 20px;
     font-weight: 750px;
 }
 
 
 
-#restos{
+#restos {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-.card{
+.card {
     padding: 20px;
     margin-bottom: 85px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
 }
-.card > img{
+
+.card>img {
     width: 100%;
 }
 
-.cname{
+.cname {
     font-size: 17px;
     font-weight: 600;
     word-break: break-word;
     margin: 0;
     margin-top: 10px;
-    color:#282c3f;
+    color: #282c3f;
 }
 
-.ctype{
+.ctype {
     color: #686b78;
     font-size: 13px;
     margin-top: 4px;
     font-weight: 300;
 }
-.crdiv{
+
+.crdiv {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -429,19 +461,19 @@ img {
     border-bottom: 1px solid lightgray;
 }
 
-.crdiv > p{
+.crdiv>p {
     font-size: 12px;
     color: #535665;
     margin: 0px 5px;
 }
 
-.crdiv > p:first-of-type{
+.crdiv>p:first-of-type {
     background-color: #48c479;
     color: white;
     padding: 2px 6px 2px 4px;
 }
 
-.coffer{
+.coffer {
     font-weight: 400;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -449,13 +481,14 @@ img {
     color: #8a584b;
     padding-bottom: 10px;
 }
-.coffer > i{
+
+.coffer>i {
     color: #8a584b;
     border-radius: 50%;
     margin-right: 10px;
 }
 
-.cqv{
+.cqv {
     display: none;
     text-align: center;
     float: none;
@@ -463,20 +496,20 @@ img {
     width: 100px;
     font-weight: 600;
     color: #5d8ed5;
-    white-space:nowrap;
+    white-space: nowrap;
     font-size: 13px;
 }
 
-.card:hover{
+.card:hover {
     border-color: #d3d5df;
     box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
 }
 
-.card:hover .cqv{
+.card:hover .cqv {
     display: block;
 }
 
-.card:hover .coffer{
+.card:hover .coffer {
     border-bottom: 1px solid lightgray;
 }
 
@@ -484,24 +517,27 @@ img {
 
 
 
-@media only screen and (max-width: 1000px) {
-    #swiggy_one{
+@media only screen and (min-width: 401) and (max-width: 1000px) {
+    #swiggy_one {
         display: grid;
         gap: 22px;
         display: none;
-        
+
     }
-    .app_download{
+
+    .app_download {
         display: grid;
         gap: 10px;
     }
-    .favRes-container{
-        grid-template-columns: repeat(2,1fr);
+
+    .favRes-container {
+        grid-template-columns: repeat(1, 1fr);
     }
-  }
-  @media only screen and (max-width: 400px) {
-  
-    .favRes-container{
-        grid-template-columns: repeat(2,1fr);
+}
+
+@media only screen and (max-width: 400px) {
+
+    .favRes-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
+}
