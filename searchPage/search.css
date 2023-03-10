@@ -1,35 +1,76 @@
-.classFlex{
+.classFlex {
     height: 48px;
-    padding-right: 30px;
     width: 65%;
+    border: var(--bs-border-width) solid var(--bs-border-color);
 }
-.newFlex{
+
+.newFlex {
     justify-content: center;
     display: flex;
-    margin-top:8rem;
+    margin-top: 8rem;
 }
-img{
+
+img {
     width: 64px !important;
     height: 64px !important;
     border-radius: 4px;
 }
-.box{
+
+.box {
     display: flex;
     margin: 2rem;
     margin-left: 14rem;
     cursor: pointer;
 }
-.item{
+
+.item {
     margin-left: 1rem;
     margin-top: 6px;
 }
-.rest{
+
+.rest {
     font-size: 14px;
     color: #7e808c;
 }
-.newIcon{
+
+.newIcon {
     margin-right: 11px;
 }
-.container{
+
+.container {
     font-family: "Montserrat";
-  }
+}
+
+#popular>p {
+    margin: 1.5rem;
+    margin-left: 14rem;
+}
+
+#displayRestaurants {
+    margin: 1rem;
+    margin-left: 14rem;
+    margin-right: 14rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divB {
+    margin-right: 23px;
+    cursor: pointer;
+}
+
+.nameCls {
+    font-size: 8px;
+}
+input.form-control:focus{
+    box-shadow: inset 0 0px 0 #ddd;
+}
+#searchText{
+    border: none;
+}
+#search-addon{
+    background-color: white;
+}
+#showClose{
+    cursor: pointer;
+}
