@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="profileEdit.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  
+ 
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+              <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+                <div class="flex-grow">
+                    <h1 id="profile-name" style="font-size: 30px; font-weight: 500;">
+                        ManojKumar Padhy
+                    </h1>
+                    <h3 id="profile-emial">7978625865,manojkumarpadhyms@gmail.com</h3>
+            </div>
+                <button  type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="flex-shrink-0   py-2 px-8  hover: rounded  mt-10 sm:mt-0"  style="border: 2px solid white; color: white;" id="edit" >Edit Profile</button>
+              </div> 
+            </div>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="width: 450px;">
+  <div class="offcanvas-header">
+    <!-- <i class="fa-solid fa-xmark fa-2x"  type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></i> -->
+    <button type="" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="background-image: -moz-linear-gradient();"></button>
+  </div>
+  <div class="offcanvas-body">
+    <label for="" id="edit-profile"> Edit Profile</label>
+    <form action="" id="login-form-edit">
+      <div>
+        <div id="phone-box-edit">
+          <input class="_381fS" type="tel"  id="mobile-edit" tabindex="1" maxlength="10" autocomplete="off" value="">
+          <div></div>
+          <label class="_1Cvlf _2tL9P " for="mobile">Phone number</label>
+        </div>
+        <div id="email-box-edit">
+          <input class="_381fS" type="email"  id="email-edit" tabindex="1" autocomplete="off" value="">
+          <div></div>
+          <label class="_1Cvlf _2tL9P " for="email">Email</label>
+        </div>
+      </div>
+      
+      <div class="update-button">
+        <a class="a-ayg"><input type="submit" value="UPDATE" id="update" ></a>
+      </div>
+     
+    </form>
+  </div>
+</div>
+          </section>
+
+
+
+          <div class="parentContainer">
+      
+            <!-- Child Container -->
+            <div class="childContainer ">
+                <div class="v6luz FvIBT"></div>
+                <div class="childDiv1">
+
+                    <div class="childSections">
+                        <div class="leftChildSec">
+                            <ul>
+                                <li class="eachOption _default">
+                                    <span class="span-icons">
+                                        <img class="icons" src=""/>
+                                    </span>
+                                    <span class="_1ZYny ko2i4" id="one">Orders</span>
+                                </li>
+                                <li class="eachOption">
+                                    <span class="span-icons">
+                                        <img class="icons" src="">
+                                    </span>
+                                    <span class="_1ZYny" id="two">Swiggy One</span>
+                                </li>
+                                <li class="eachOption">
+                                  <span class="span-icons">
+                                      <img class="icons" src=""/>
+                                  </span>
+                                  <span class="_1ZYny" id="three">Favourites</span>
+                              </li>
+                                <li class="eachOption">
+                                    <span class="span-icons">
+                                        <img class="icons" src=""/>
+                                    </span>
+                                    <span class="_1ZYny" id="four">Payments</span>
+                                </li>
+                                <li class="eachOption">
+                                    <span class="span-icons">
+                                        <img class="icons" src=""/>
+                                    </span>
+                                    <span class="_1ZYny" id="five">Addresses</span>
+                                </li>
+                                <li class="eachOption">
+                                    <span class="span-icons">
+                                        <img class="icons" src=""/>
+                                    </span>
+                                    <span class="_1ZYny" id="six">Settings</span>
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+
+                        <div class="rightChildSec">
+                            <!-- Dynamic for Button -->
+
+
+                            <!-- order -->
+                            <div class="_1stFr"> 
+                                <div class="imageSec">
+                                    <img class="imgsub _img_oN _imgfq" height="262" alt="" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_262/empty-orders-image_acrbbw">
+                                    <div class="showOrder">No Orders</div>
+                                    <div class="orderDetail">You haven't placed any order yet.</div>
+                                </div>
+                            </div>
+
+                            <!-- swiggy-one -->
+                            <div id="swiggy_one">
+                              <div class="swiggy_one_one">
+                                <label for="" class="swiggy_one_text">Swiggy One</label>
+                                <p>Get free delivery and extra discounts all across Swiggy.
+                                </p>
+                                <p>Your Swiggy One benefits can be availed only on the Swiggy App.
+
+                                </p>
+                                <div class="app_download">
+                                  <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-AppStore_lg30tv" alt="">
+                                  <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_200,h_65/icon-GooglePlay_1_zixjxl" alt="">
+                                </div>
+                              </div>
+                              <div class="swiggy_one_two">
+                                  <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_720,h_660/swiggy_one/my_account_super" alt="">
+                              </div>
+
+                            </div>
+
+                            <div class="payment-method">
+                              <h1>Payments</h1>
+                            </div>
+
+                            <div class="profile-address">
+                              
+                              <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_252/NoSavedAddress_ttsdqs" alt="">
+                              <h1>Can't find a door to knock
+                              </h1>
+                              <p>You don't have an address to deliver.
+                              </p>
+                            </div>
+
+                            <div class="profile-setting">
+                              <h1 class="setting-text">SMS Preference</h1>
+                              <div class="setting-text-one">
+                                Order related SMS cannot be disabled as they are critical to provide service
+
+                              </div>
+                              <div class="setting-text-two">
+                                <div id="setting-text-two">
+                                  Recommendations & Reminders
+                                </div>
+                                <div>Keep this on to receive offer recommendations & timely reminders based on your interests</div>
+                              </div>
+                            </div>
+
+                              
+                            <div class="favRes-container">
+                                
+
+                            </div>
+                            
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+               
+            </div>
+			</div>
+
+
+       
+          
+          <script src="profileEdit.js"></script>
+          <script src="https://kit.fontawesome.com/977289aa03.js" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
