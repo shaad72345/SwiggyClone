@@ -1,0 +1,32 @@
+.classFlex{
+    height: 48px;
+    padding-right: 30px;
+    width: 65%;
+}
+.newFlex{
+    justify-content: center;
+    display: flex;
+    margin-top:8rem;
+}
+img{
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 4px;
+}
+.box{
+    display: flex;
+    margin: 2rem;
+    margin-left: 14rem;
+    cursor: pointer;
+}
+.item{
+    margin-left: 1rem;
+    margin-top: 6px;
+}
+.rest{
+    font-size: 14px;
+    color: #7e808c;
+}
+.newIcon{
+    margin-right: 11px;
+}
