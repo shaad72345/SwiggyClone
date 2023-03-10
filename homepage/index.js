@@ -16,10 +16,15 @@ var filteredList = restoData.slice()
 showData(restoData)
 function showData(d){
     document.getElementById("restos").textContent = ""
+    document.getElementById("rcount").textContent = d.length
+    document.getElementById("rcount").style.marginRight = "10px"
     d.forEach(function(elem){
         let card = document.createElement("div")
         card.setAttribute("class","card")
-
+        card.addEventListener("click",function(){
+          localStorage.setItem("selected-resto",JSON.stringify(elem))
+          window.location.href = "..fooditems/Fooditems.html"
+        })
         let img = document.createElement("img")
         img.src = elem.img
 
@@ -146,9 +151,11 @@ let tabs = document.querySelectorAll(".tab")
 for(let i=0;i<tabs.length;i++){
   tabs[i].addEventListener("click",function(){
     tabs[i].setAttribute("class","tab selected")
+    tabs[i].style.color = "#3d4152"
     for(let j=0;j<tabs.length;j++){
       if(i!=j){
         tabs[j].setAttribute("class","tab")
+        tabs[j].style.color = "#686b78"
       }
     }
     if(tabs[i].textContent.includes("Time")){

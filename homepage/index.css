@@ -54,7 +54,6 @@ body {
     cursor: pointer;
 }
 #restobar > div:nth-of-type(2) > p{
-    color:#3d4152;
     font-size: 16px;
     font-weight: 300;
     text-transform: capitalize;
