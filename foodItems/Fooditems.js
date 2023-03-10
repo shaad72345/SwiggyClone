@@ -1,9 +1,33 @@
 
+ let resto ={"name":"Royal Restorant",
+ "type":"India,Vegiterian,",
+ "time":"35min",
+ }
+ localStorage.setItem("selected-resto",JSON.stringify(resto));
+
+///////////////////Display Restaurant Name///////////////////////////
+let favRest = JSON.parse(localStorage.getItem("selected-resto"));
+function DisplayResto(){
+  
+ let Restaurant = document.getElementsByClassName("RestName");
+ for(let i=0; i<Restaurant.length; i++){
+   Restaurant[i].innerText=favRest.name;
+ }
+ document.getElementById("type").textContent=favRest.type;
+ document.getElementById("time").textContent="Deliver in "+favRest.time+" min";
+  }
+  DisplayResto();
+  /////////////////////////end////////////////////////////////////
+
+
 ////////////////////Toggle Like function/////////////////////////////
 function likefunc(x) {
     x.classList.toggle("fa-heart-o");
+    localStorage.setItem("FavRest",JSON.stringify(favRest));
+    
   };
  /////////////////////////End///////////////////////////////////////////// 
+
 
 
 ///////////////////Sticky Like Div/////////////////////////////
@@ -21,9 +45,33 @@ function myFunction() {
 }
 ////////////////////////End//////////////////////////////////////////
 
+/////////////////////Veg Toggle/////////////////////////////////
+let toggle  = document.querySelector('.switch input');
+toggle.onclick = function(){
+  if(toggle.checked){
+        let FilteredVeg =  FoodList.filter(function(elem){
+          return elem.Veg;
+        })
+        DisplayItems(FilteredVeg);
+        let btn =document.getElementsByClassName("countmainDiv");
+          for(let i=0; i<btn.length; i++){
+          btn[i].style.display = "none";
+          }
+  }
+  else{
+    DisplayItems(FoodList);
+    let btn =document.getElementsByClassName("countmainDiv");
+          for(let i=0; i<btn.length; i++){
+          btn[i].style.display = "none";
+          }
+  }
+}
+///////////////////////////End////////////////////////////////////
+
 /////////////////////Foood Item Array////////////////////////////////
 var FoodList=[{
   "id": 1,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/f6e049469097915c1d1b88c89db9d20a",
@@ -32,6 +80,7 @@ var FoodList=[{
   "Details": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus."
 }, {
   "id": 2,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/niau2vf8qajld1lx1v3t",
@@ -40,6 +89,7 @@ var FoodList=[{
   "Details": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum."
 }, {
   "id": 3,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/hxact71bqoa2tq4k7xx9",
@@ -48,6 +98,7 @@ var FoodList=[{
   "Details": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus."
 }, {
   "id": 4,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7d3d20acd8834731759b8ec62eb4abe6",
@@ -56,6 +107,7 @@ var FoodList=[{
   "Details": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat."
 }, {
   "id": 5,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
@@ -64,6 +116,7 @@ var FoodList=[{
   "Details": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet."
 }, {
   "id": 6,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/niau2vf8qajld1lx1v3t",
@@ -72,6 +125,7 @@ var FoodList=[{
   "Details": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi."
 }, {
   "id": 7,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7d3d20acd8834731759b8ec62eb4abe6",
@@ -80,6 +134,7 @@ var FoodList=[{
   "Details": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
 }, {
   "id": 8,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/hxact71bqoa2tq4k7xx9",
@@ -88,6 +143,7 @@ var FoodList=[{
   "Details": "Phasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."
 }, {
   "id": 9,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/niau2vf8qajld1lx1v3t",
@@ -96,6 +152,7 @@ var FoodList=[{
   "Details": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
 }, {
   "id": 10,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7d3d20acd8834731759b8ec62eb4abe6",
@@ -104,6 +161,7 @@ var FoodList=[{
   "Details": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
 }, {
   "id": 11,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
@@ -112,6 +170,7 @@ var FoodList=[{
   "Details": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem."
 }, {
   "id": 12,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -120,6 +179,7 @@ var FoodList=[{
   "Details": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus."
 }, {
   "id": 13,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -128,6 +188,7 @@ var FoodList=[{
   "Details": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus."
 }, {
   "id": 14,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
@@ -136,6 +197,7 @@ var FoodList=[{
   "Details": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
 }, {
   "id": 15,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gjoufzhv3gzgd5s6v8i0",
@@ -144,6 +206,7 @@ var FoodList=[{
   "Details": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus."
 }, {
   "id": 16,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -152,6 +215,7 @@ var FoodList=[{
   "Details": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
 }, {
   "id": 17,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -160,6 +224,7 @@ var FoodList=[{
   "Details": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
 }, {
   "id": 18,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
@@ -168,6 +233,7 @@ var FoodList=[{
   "Details": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
 }, {
   "id": 19,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
@@ -176,6 +242,7 @@ var FoodList=[{
   "Details": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero."
 }, {
   "id": 20,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -184,6 +251,7 @@ var FoodList=[{
   "Details": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris."
 }, {
   "id": 21,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -192,6 +260,7 @@ var FoodList=[{
   "Details": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus."
 }, {
   "id": 22,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
@@ -200,6 +269,7 @@ var FoodList=[{
   "Details": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst."
 }, {
   "id": 23,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
@@ -208,6 +278,7 @@ var FoodList=[{
   "Details": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."
 }, {
   "id": 24,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
@@ -216,6 +287,7 @@ var FoodList=[{
   "Details": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus."
 }, {
   "id": 25,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
@@ -224,6 +296,7 @@ var FoodList=[{
   "Details": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus."
 }, {
   "id": 26,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -232,6 +305,7 @@ var FoodList=[{
   "Details": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
 }, {
   "id": 27,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -240,6 +314,7 @@ var FoodList=[{
   "Details": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh."
 }, {
   "id": 28,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gjoufzhv3gzgd5s6v8i0",
@@ -248,6 +323,7 @@ var FoodList=[{
   "Details": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
 }, {
   "id": 29,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
@@ -256,6 +332,7 @@ var FoodList=[{
   "Details": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
 }, {
   "id": 30,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -264,6 +341,7 @@ var FoodList=[{
   "Details": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
 }, {
   "id": 31,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
@@ -272,6 +350,7 @@ var FoodList=[{
   "Details": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus."
 }, {
   "id": 32,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gjoufzhv3gzgd5s6v8i0",
@@ -280,6 +359,7 @@ var FoodList=[{
   "Details": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi."
 }, {
   "id": 33,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -288,6 +368,7 @@ var FoodList=[{
   "Details": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl."
 }, {
   "id": 34,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
@@ -296,6 +377,7 @@ var FoodList=[{
   "Details": "Fusce consequat. Nulla nisl. Nunc nisl."
 }, {
   "id": 35,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -304,6 +386,7 @@ var FoodList=[{
   "Details": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis."
 }, {
   "id": 36,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
@@ -312,6 +395,7 @@ var FoodList=[{
   "Details": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui."
 }, {
   "id": 37,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -320,6 +404,7 @@ var FoodList=[{
   "Details": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst."
 }, {
   "id": 38,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
@@ -328,6 +413,7 @@ var FoodList=[{
   "Details": "Nulla ut erat id mauris vulputate elementum."
 }, {
   "id": 39,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gjoufzhv3gzgd5s6v8i0",
@@ -336,6 +422,7 @@ var FoodList=[{
   "Details": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus."
 }, {
   "id": 40,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -344,6 +431,7 @@ var FoodList=[{
   "Details": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque."
 }, {
   "id": 41,
+  "Qty":1,
   "TypeIcon": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -352,6 +440,7 @@ var FoodList=[{
   "Details": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat."
 }, {
   "id": 42,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gjoufzhv3gzgd5s6v8i0",
@@ -360,6 +449,7 @@ var FoodList=[{
   "Details": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo."
 }, {
   "id": 43,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -368,6 +458,7 @@ var FoodList=[{
   "Details": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus."
 }, {
   "id": 44,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
@@ -376,6 +467,7 @@ var FoodList=[{
   "Details": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem."
 }, {
   "id": 45,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -384,6 +476,7 @@ var FoodList=[{
   "Details": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem."
 }, {
   "id": 46,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
@@ -392,6 +485,7 @@ var FoodList=[{
   "Details": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
 }, {
   "id": 47,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -400,6 +494,7 @@ var FoodList=[{
   "Details": "Fusce consequat. Nulla nisl. Nunc nisl."
 }, {
   "id": 48,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
@@ -408,6 +503,7 @@ var FoodList=[{
   "Details": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
 }, {
   "id": 49,
+  "Qty":1,
   "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
   "Veg": true,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
@@ -416,6 +512,7 @@ var FoodList=[{
   "Details": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis."
 }, {
   "id": 50,
+  "Qty":1,
   "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
@@ -431,7 +528,7 @@ DisplayItems(FoodList);
 ////////////////// Display Function //////////////////////////////////
 function DisplayItems(FoodList){
 mainItemContainer.innerText = "";
-FoodList.map(function(elem){
+FoodList.map(function(elem,index){
 
   let itemCard = document.createElement("div");
   itemCard.setAttribute("class","ItemContainer");
@@ -445,7 +542,7 @@ FoodList.map(function(elem){
   let Name = document.createElement("h2");
 Name.textContent=elem.Item;
   let Price = document.createElement("h3");
-  Price.textContent=elem.Price;
+  Price.textContent="₹ "+elem.Price;
   let foodDetails = document.createElement("p");
   
 foodDetails.textContent=elem.Details;
@@ -459,47 +556,167 @@ foodDetails.setAttribute("class","Foodpara");
   let AddButton = document.createElement("button");
   AddButton.setAttribute("class", "xyz");
   AddButton.textContent="ADD";
-  AddButton.addEventListener("click",function(){AddtoCart(elem.id)});
+  AddButton.addEventListener("click",function(){AddtoCart(elem.id,index)});
+/////////////Count/////////////////////
+  let countmaindiv = document.createElement("div");
+  countmaindiv.setAttribute("class","countmainDiv");
+  let negDiv = document.createElement("div");
+  negDiv.setAttribute("class", "negDiv");
+  negDiv.innerText="-";
+  negDiv.addEventListener("click", function(){decrement(elem.id,index)});
+  let countDiv = document.createElement("div");
+  countDiv.setAttribute("class","countDiv");
 
-    
+  let countdigit= document.createElement("p");
+  countdigit.setAttribute("class","countdigit");
+
+  countdigit.innerText="0";
+  countDiv.append(countdigit);
+  let posDiv = document.createElement("div");
+  posDiv.setAttribute("class","posDiv");
+  posDiv.innerText="+";
+  posDiv.addEventListener("click",function(){increment(elem.id,index)});
+
+  countmaindiv.append(negDiv,countDiv,posDiv)
+
+///////////////////////////////////////
 
  
   DetailDiv.append(Icon,Name,Price,foodDetails);
-  imgDiv.append(Image,AddButton);
-  itemCard.append(DetailDiv,imgDiv);
+  imgDiv.append(Image,AddButton,countmaindiv);
+  itemCard.append(DetailDiv,imgDiv,);
   mainItemContainer.append(itemCard);
 
 })
 }
+
 ////////////////////////End/////////////////////////////////////
-let cartArr = JSON.parse(localStorage.getItem("CartItems"))||[]
-function AddtoCart(x){
+
+let btn =document.getElementsByClassName("countmainDiv");
+for(let i=0; i<btn.length; i++){
+  btn[i].style.display = "none";
+}
+
+
+
+function AddtoCart(x,index){
+  let cartArr = JSON.parse(localStorage.getItem("CartItems"))||[];
+  let query= document.querySelectorAll(".countdigit");
+  query[index].textContent=1;
+let Addbtn=document.getElementsByClassName("xyz");
+Addbtn[index].style.display = "none";
+let countbtn =document.getElementsByClassName("countmainDiv");
+countbtn[index].style.display="flex";
 let cartProduct = FoodList.filter(function(elem){
   if(elem.id==x){
     return true;
   }
 })
 cartArr.push (cartProduct[0]);
+nOfItems(cartArr);
 localStorage.setItem("CartItems" ,JSON.stringify(cartArr));
+DisplayCart();
 }
-/////////////////////Veg Toggle/////////////////////////////////
-let toggle  = document.querySelector('.switch input');
-toggle.onclick = function(){
-  if(toggle.checked){
-        let FilteredVeg =  FoodList.filter(function(elem){
-          return elem.Veg;
-        })
-        DisplayItems(FilteredVeg);
+
+
+/////// increment function////////
+function increment(elemId,index) {
+  let cartArr1 = JSON.parse(localStorage.getItem("CartItems"))||[]
+  console.log(cartArr1);
+
+let NewCartArr=cartArr1.map(TargetCart);
+function TargetCart(item){
+  if(item.id==elemId){ 
+    item.Qty++;
+    return item;
   }
-  else{
-    DisplayItems(FoodList);
-  }
+else{
+return item;
 }
-///////////////////////////End////////////////////////////////////
+}
+console.log(NewCartArr);
+nOfItems(NewCartArr);
+ localStorage.setItem("CartItems" ,JSON.stringify(NewCartArr));
+
+  let query= document.querySelectorAll(".countdigit");
+  var data=Number(query[index].innerHTML);
+    data = data + 1;
+    query[index].innerText=data;
+    DisplayCart();
+}
+///////// decrement function///////
+function decrement(elemId,index) {
+  let cartArr1 = JSON.parse(localStorage.getItem("CartItems"))||[]
+  console.log(elemId);
+
+let NewCartArr=cartArr1.map(TargetCart);
+function TargetCart(item){
+  if(item.id==elemId){ 
+
+  if(item.Qty==0){
+    
+    return item;
+  }
+  else{ 
+  item.Qty--;
+  return item
+}
+}
+else{
+return item
+}
+}
+let NewCartArr1=NewCartArr.filter(function(element){
+if(element.id==elemId && element.Qty==0){
+   return false;
+  }
+
+else{
+  return true;
+}
+})
+console.log(NewCartArr1);
+nOfItems(NewCartArr1);
+ localStorage.setItem("CartItems" ,JSON.stringify(NewCartArr1));
+  let query1= document.querySelectorAll(".countdigit");
+  var data=Number(query1[index].innerHTML);
+    data = data - 1;
+    if(data<1){
+      let btn =document.getElementsByClassName("countmainDiv");
+      btn[index].style.display="none";
+      Addbtn=document.getElementsByClassName("xyz");
+      Addbtn[index].style.display="block";
+    }
+    console.log(data);
+     let query= document.querySelectorAll(".countdigit");
+     query[index].innerText=data;
+     DisplayCart();
+}
+////////////////////NoOFitems Display/////////////////
+let cartArrX = JSON.parse(localStorage.getItem("CartItems"))||[];
+nOfItems(cartArrX);
 
 
+function nOfItems(CartData){
+let sum=0;
+for(let i=0; i<CartData.length; i++){
+  sum = sum+(CartData[i].Qty * CartData[i].Price);
+}
+   document.getElementById("noOfItems").innerText=CartData.length;
+   document.getElementById("Total").innerText=sum;
+}
+let x=document.querySelector(".fixed");
+x.style.display="none";
 
+function DisplayCart(){
 
+if(document.getElementById("noOfItems").innerText>0){
+  x.style.display="flex";
+}
+else{
+  x.style.display="none";
+}
+}
 
 
 

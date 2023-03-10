@@ -1,7 +1,10 @@
 
+=======
+document.getElementById("navbar").innerHTML = navbar;
+document.getElementById("footer").innerHTML = footer;
 
 var cartitem = JSON.parse(localStorage.getItem("user_log_session")) || [];
-console.log(cartitem.user_cart);
+// console.log(cartitem.user_cart);
 var addressArr = JSON.parse(localStorage.getItem("address")) || [];
 var id = 1;
 let SelectedREs=JSON.parse(localStorage.getItem("selected-resto"))
@@ -252,6 +255,25 @@ const map = () => {
     //                           onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
     //                           <i class="fas fa-minus"></i>
     //                         </button>
+=======
+    const data = cartitem.user_cart || [];
+    data.map(function (el) {
+      totalamt += el.price;
+      let div = `
+      <div class="row mb-4 d-flex justify-content-between align-items-center dish">
+                          <div class="col-md-2 col-lg-2 col-xl-2">
+                            <img height="20px" width="20px"
+                              src="./img/800px-Indian-vegetarian-mark.svg.png"
+                              class="img-fluid rounded-3" alt="Cotton T-shirt">
+                          </div>
+                          <div class="col-md-3 col-lg-3 col-xl-3">
+                            <h6 class="text-muted">${el.item_name}</h6>
+                          </div>
+                          <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                            <button class="btn btn-link px-2"
+                              onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                              <i class="fas fa-minus"></i>
+                            </button>
       
     //                         <input id="${el.id}" min="0" name="quantity" value="1" type="number"
     //                           class="form-control form-control-sm" />
@@ -275,8 +297,8 @@ const map = () => {
     // });
     var div1 = `
    <div>
-                          <div>TO PAY</div>
-                          <div>${totalamt}</div>
+                  
+        
                       </div>
    `;
     document.getElementById("toPay").innerHTML = div1;
@@ -284,6 +306,9 @@ const map = () => {
   displayright();
   // document .getElementById("cart_items_button2").addEventListener("click", gotoDashBoard);
   // document.getElementById("cart_items_button").addEventListener("click", gotoDashBoard);
+=======
+//   document.getElementById("cart_items_button2").addEventListener("click", gotoDashBoard);
+//   document.getElementById("cart_items_button").addEventListener("click", gotoDashBoard);
   function gotoDashBoard(e) {
     e.preventDefault();
     alert("Order Placed Successfully!");
