@@ -310,7 +310,7 @@ logout.onclick=()=>{
     signinNav.style.display="block";
     profileNav.style.display="none"
     Alert("logout Successfully!",logout,"sucess")
-    location.href="../componentt/navbar1.html"
+    location.href="../homepage/index.html"
 }
 
 
