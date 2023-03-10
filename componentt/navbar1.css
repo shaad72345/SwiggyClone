@@ -1,6 +1,6 @@
 /* navbar css */
 *{
-    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+    font-family: "montserrat";
 }
 #nav-body>div{
     padding-top: 0;
@@ -35,7 +35,7 @@
 
 #other{
     
-        font-weight: 700;
+        font-weight: 1000;
         color: #3d4152;
         float: left;
         /* text-overflow: ellipsis; */
@@ -81,7 +81,7 @@
 .items-center{
     cursor: pointer;
      font-size: 16px;
-    font-weight: 500;
+    font-weight: 1000;
     gap: 20px;
 }
 .items-center>a:hover{
