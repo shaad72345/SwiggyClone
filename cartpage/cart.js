@@ -1,10 +1,8 @@
-import { footer, navbar } from "./utility.js";
-
 document.getElementById("navbar").innerHTML = navbar;
 document.getElementById("footer").innerHTML = footer;
 
 var cartitem = JSON.parse(localStorage.getItem("user_log_session")) || [];
-console.log(cartitem.user_cart);
+// console.log(cartitem.user_cart);
 var addressArr = JSON.parse(localStorage.getItem("address")) || [];
 var id = 1;
 
@@ -203,7 +201,7 @@ const map = () => {
   
   function displayright() {
     var totalamt = 0;
-    const data = cartitem.user_cart;
+    const data = cartitem.user_cart || [];
     data.map(function (el) {
       totalamt += el.price;
       let div = `
@@ -244,19 +242,15 @@ const map = () => {
     });
     var div1 = `
    <div>
-                          <div>TO PAY</div>
-                          <div>${totalamt}</div>
+                  
+        
                       </div>
    `;
     document.getElementById("toPay").innerHTML = div1;
   }
   displayright();
-  document
-    .getElementById("cart_items_button2")
-    .addEventListener("click", gotoDashBoard);
-  document
-    .getElementById("cart_items_button")
-    .addEventListener("click", gotoDashBoard);
+//   document.getElementById("cart_items_button2").addEventListener("click", gotoDashBoard);
+//   document.getElementById("cart_items_button").addEventListener("click", gotoDashBoard);
   function gotoDashBoard(e) {
     e.preventDefault();
     alert("Order Placed Successfully!");
