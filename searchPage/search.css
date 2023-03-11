@@ -10,16 +10,16 @@
     margin-top: 8rem;
 }
 
-img {
-    width: 64px !important;
-    height: 64px !important;
+#displayRestaurants img,#showRestaurants img {
+    width: 100px !important;
+    height: 100px !important;
     border-radius: 4px;
 }
 
 .box {
     display: flex;
     margin: 2rem;
-    margin-left: 14rem;
+    margin-left: -1px;
     cursor: pointer;
 }
 
@@ -37,30 +37,40 @@ img {
     margin-right: 11px;
 }
 
-.container {
+.container1 {
     font-family: "Montserrat";
+    width: 60%;
+    margin: auto;
 }
+#displayRestaurants{
+    width: 100%;
+    margin: 0;
+}
+
 
 #popular>p {
     margin: 1.5rem;
-    margin-left: 14rem;
+    /* margin-left: 14rem; */
 }
 
 #displayRestaurants {
     margin: 1rem;
-    margin-left: 14rem;
+    /* margin-left: 14rem; */
     margin-right: 14rem;
     display: flex;
-    flex-wrap: wrap;
 }
 
-.divB {
+.divB{
     margin-right: 23px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .nameCls {
-    font-size: 8px;
+    font-size: 12px;
 }
 input.form-control:focus{
     box-shadow: inset 0 0px 0 #ddd;

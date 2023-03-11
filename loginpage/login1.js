@@ -230,6 +230,10 @@ currentLocBtn.onclick=()=>{
 
 }
 
+document.getElementById("logo").addEventListener("click",()=>{
+    location.href="../index.html"
+})
+
 
 // location by input search
 
