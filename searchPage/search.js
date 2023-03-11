@@ -80,10 +80,14 @@ function displayProducts(products) {
     products.map(function (elem) {
         var divBox = document.createElement("div");
         divBox.setAttribute("class", "box");
-
+        divBox.addEventListener("click",()=>{
+            localStorage.setItem("selected-resto",JSON.stringify(elem))
+            window.location.href="../fooditems/Fooditems.html"
+        })
         var img = document.createElement("img");
         img.setAttribute("src", elem.img);
         img.setAttribute("class", "imageClass");
+
         var item = document.createElement("div");
         item.setAttribute("class", "item");
         var name = document.createElement("span");
@@ -95,10 +99,11 @@ function displayProducts(products) {
         item.append(name, rest);
         divBox.append(img, item);
         document.getElementById("showRestaurants").append(divBox);
-
+        
 
     })
 }
+
 
 function showProducts(products) {
 

@@ -1,5 +1,4 @@
-//import { navbar } from "../component/navbar.js";
-//document.getElementById("nbar").innerHTML = navbar()
+
 
 
 let restoData = [
@@ -23,7 +22,7 @@ function showData(d){
         card.setAttribute("class","card")
         card.addEventListener("click",function(){
           localStorage.setItem("selected-resto",JSON.stringify(elem))
-          window.location.href = "..fooditems/Fooditems.html"
+          window.location.href = "./foodItems/Fooditems.html"
         })
         let img = document.createElement("img")
         img.src = elem.img

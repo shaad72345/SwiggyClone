@@ -223,10 +223,11 @@ body {
 }
 
 .card{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    cursor: pointer !important;
+    border: 0 !important;
 }
 .card > img{
     width: 100%;
@@ -306,81 +307,79 @@ body {
 .card:hover .coffer{
     border-bottom: 1px solid lightgray;
 }
-
 /* carousel */
 #offers{
-    background-color: #171a29;
-    padding: 30px;
+    background-color: #171a29 !important;
+    padding: 30px !important;
 }
 
 .carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: 0 auto;
-    background-color: #f8f8f8;
-    width: 95%;
-    background-color: #171a29;
+    position: relative !important;
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    background-color: #f8f8f8 !important;
+    width: 95% !important;
+    background-color: #171a29 !important;
   }
   
   .carousel-container {
-    display: flex;
-    transition: transform 0.5s ease;
-    background-color: #171a29;
+    display: flex !important;
+    transition: transform 0.5s ease !important;
+    background-color: #171a29 !important;
   }
   
   .carousel-item {
-    flex: 0 0 calc((100% - 60px) / 4); /* change this line */
-    height: 260px;
-    margin-right: 20px;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 60px;
-    font-weight: bold;
-    background-color: #171a29;
-    cursor: pointer;
-    transform: translateZ(0);
-    transition: transform .5s cubic-bezier(.215,.61,.355,1);
-    margin: 10px;
+    flex: 0 0 calc((100% - 60px) / 4) !important; /* change this line */
+    height: 260px !important;
+    margin-right: 20px !important;
+    background-color: #ddd !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 60px !important;
+    font-weight: bold !important;
+    background-color: #171a29 !important;
+    cursor: pointer !important;
+    transform: translateZ(0) !important;
+    transition: transform .5s cubic-bezier(.215,.61,.355,1) !important;
+    margin: 10px !important;
   }
 
   .carousel-item:hover{
-    transform: scale(1.05);
-    transition: transform .5s cubic-bezier(.215,.61,.355,1);
+    transform: scale(1.05) !important;
+    transition: transform .5s cubic-bezier(.215,.61,.355,1) !important;
   }
   
   .carousel-item img{
-    width: 260px;
-    height: 260px;
+    width: 260px !important;
+    height: 260px !important;
   }
 
   .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    font-weight: 200;
-    color: #535665;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: white;
-    height: 47px;
-    width: 47px;
-    line-height: 47px;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    font-size: 20px !important;
+    font-weight: 200 !important;
+    color: #535665 !important;
+    cursor: pointer !important;
+    border-radius: 50% !important;
+    background-color: white !important;
+    height: 47px !important;
+    width: 47px !important;
+    line-height: 47px !important;
   }
   
   
   .carousel-button-left {
-    left: 0;
+    left: 0 !important;
   }
   
   .carousel-button-right {
-    right: 0;
+    right: 0 !important;
   }
   
 /* footer */

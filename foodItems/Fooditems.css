@@ -1,6 +1,14 @@
-*{
-  font-family: 'Montserrat', sans-serif;
+/* #main--container *{
+  font-family: 'Montserrat', sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
  
+}
+#main--container p{
+  font-family: 'Montserrat', sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+
+} */
+#mainItemContainer{
+  font-family: 'Montserrat', sans-serif,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+
 }
 #likeDiv{
     display: flex;
@@ -228,7 +236,7 @@ color: #1e8249;
    overflow: hidden;
  padding: 15px;
  top: 0;
-left: 265px;
+left: 250px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
@@ -273,6 +281,9 @@ align-items: center;
   .xyz {
     position: static;
 
+  }
+  .countmainDiv{
+    position: static;
   }
 }
 

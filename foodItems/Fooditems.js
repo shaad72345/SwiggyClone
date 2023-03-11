@@ -1,12 +1,12 @@
 
- let resto ={"name":"Royal Restorant",
- "type":"India,Vegiterian,",
- "time":"35min",
- }
- localStorage.setItem("selected-resto",JSON.stringify(resto));
+//  let resto ={"name":"Royal Restorant",
+//  "type":"India,Vegiterian,",
+//  "time":"35min",
+//  }
+//  localStorage.setItem("selected-resto",JSON.stringify(resto));
 
 ///////////////////Display Restaurant Name///////////////////////////
-let favRest = JSON.parse(localStorage.getItem("selected-resto"));
+let favRest = JSON.parse(localStorage.getItem("selected-resto")) || [];
 function DisplayResto(){
   
  let Restaurant = document.getElementsByClassName("RestName");
@@ -21,9 +21,11 @@ function DisplayResto(){
 
 
 ////////////////////Toggle Like function/////////////////////////////
+let array=JSON.parse(localStorage.getItem("FavRest")) || [];
 function likefunc(x) {
+  array.push(favRest)
     x.classList.toggle("fa-heart-o");
-    localStorage.setItem("FavRest",JSON.stringify(favRest));
+    localStorage.setItem("FavRest",JSON.stringify(array));
     
   };
  /////////////////////////End///////////////////////////////////////////// 
@@ -72,7 +74,7 @@ toggle.onclick = function(){
 var FoodList=[{
   "id": 1,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/f6e049469097915c1d1b88c89db9d20a",
   "Item": "Lotus Root",
@@ -90,7 +92,7 @@ var FoodList=[{
 }, {
   "id": 3,
   "Qty":1,
-  "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/hxact71bqoa2tq4k7xx9",
   "Item": "Cutlet - Side Ribs",
@@ -99,7 +101,7 @@ var FoodList=[{
 }, {
   "id": 4,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/7d3d20acd8834731759b8ec62eb4abe6",
   "Item": "Lambcasing",
@@ -108,7 +110,7 @@ var FoodList=[{
 }, {
   "id": 5,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
   "Item": "Bread - Bistro Sour",
@@ -117,7 +119,7 @@ var FoodList=[{
 }, {
   "id": 6,
   "Qty":1,
-  "TypeIcon": "https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/niau2vf8qajld1lx1v3t",
   "Item": "Nut - Chestnuts, Whole",
@@ -144,7 +146,7 @@ var FoodList=[{
 }, {
   "id": 9,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/niau2vf8qajld1lx1v3t",
   "Item": "Oil - Truffle, White",
@@ -162,7 +164,7 @@ var FoodList=[{
 }, {
   "id": 11,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
   "Item": "Chicken - Ham Hocks - Smoked",
@@ -171,7 +173,7 @@ var FoodList=[{
 }, {
   "id": 12,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
   "Item": "Butter - Pod",
@@ -180,7 +182,7 @@ var FoodList=[{
 }, {
   "id": 13,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
   "Item": "Wine - Rosso Del Veronese Igt",
@@ -207,7 +209,7 @@ var FoodList=[{
 }, {
   "id": 16,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
   "Item": "Figs",
@@ -234,7 +236,7 @@ var FoodList=[{
 }, {
   "id": 19,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
   "Item": "Beer - Sleemans Honey Brown",
@@ -252,7 +254,7 @@ var FoodList=[{
 }, {
   "id": 21,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/wxh23zf9ojmux1u0ge0f",
   "Item": "Beef - Rouladin, Sliced",
@@ -261,7 +263,7 @@ var FoodList=[{
 }, {
   "id": 22,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fvbm6cnlqbvyvmqwtrah",
   "Item": "Veal - Provimi Inside",
@@ -279,7 +281,7 @@ var FoodList=[{
 }, {
   "id": 24,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
   "Item": "Beef - Tenderloin",
@@ -315,7 +317,7 @@ var FoodList=[{
 }, {
   "id": 28,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gjoufzhv3gzgd5s6v8i0",
   "Item": "Plums - Red",
@@ -342,7 +344,7 @@ var FoodList=[{
 }, {
   "id": 31,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
   "Item": "Orange Roughy 6/8 Oz",
@@ -351,7 +353,7 @@ var FoodList=[{
 }, {
   "id": 32,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/gjoufzhv3gzgd5s6v8i0",
   "Item": "Stock - Veal, Brown",
@@ -378,7 +380,7 @@ var FoodList=[{
 }, {
   "id": 35,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
   "Item": "mutton / Sausage Casing - Mutton",
@@ -423,7 +425,7 @@ var FoodList=[{
 }, {
   "id": 40,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/tqtehuhblrtawjb1ssjj",
   "Item": "Tortillas - Flour, 8",
@@ -477,7 +479,7 @@ var FoodList=[{
 }, {
   "id": 46,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ekinyniep2khq6cpnp4m",
   "Item": "Dikon",
@@ -513,7 +515,7 @@ var FoodList=[{
 }, {
   "id": 50,
   "Qty":1,
-  "TypeIcon": "https://foofyfood.tamss.biz/assets/img/slider/1632896515z7pChizIa6.jpg",
+  "TypeIcon": "https://openclipart.org/image/800px/304247",
   "Veg": false,
   "Image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/eoaiqltbgj2xfxgeods0",
   "Item": "Wine - Saint - Bris 2002, Sauv",
